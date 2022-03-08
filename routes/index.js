@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var { format } = require('date-fns');
 
 const messages = [
   {
@@ -16,7 +17,7 @@ const messages = [
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Mini Messageboard', messages: messages});
+  res.render('index', { title: 'Mini Message Board', messages: messages, dateFormatter: format});
 });
 router.get('/new', function(req, res, next) {
   res.render('form');

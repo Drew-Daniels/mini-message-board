@@ -1,9 +1,9 @@
 extends layout 
 block content 
-    form(method="POST" action="/new")
-        h1 New Message 
-        input(name="authorName" placeholder="Author Name")
-        input(name="message" placeholder="Message")
-        button(type="submit")
-            img()
-            span New Message 
+    form(method="POST" action="/new").form
+        h1.form-header New Message 
+        input(name="authorName" placeholder="Author Name").input-author.form-control
+        input(name="message" placeholder="Message").input-message.form-control
+        button(type="submit").button-base.button-submit
+            img(src='./images/add-icon.svg').button-img
+            span.button-text Submit

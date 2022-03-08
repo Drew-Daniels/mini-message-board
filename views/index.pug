@@ -1,11 +1,17 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1.main-header= title
+  p.main-header-subtitle Welcome to #{title}
   - function move() {window.location.href='/new'}
-  each msg in messages 
-    h2.msg-user #{msg.user} 
-    p.msg-text #{msg.text}
-    p.msg-added #{msg.added}
-  button(onclick="location.href='./new'").msg-button New Message
+  each msg in messages
+    .msg
+      .user-metadata-container
+        img(src='./images/user-icon.svg').user-img
+        span.user-name #{msg.user} 
+      .msg-container
+        p.msg-text #{msg.text}
+        p.msg-added-date #{dateFormatter(msg.added, "M/d/yyyy 'at' hh:mm a")}
+  button(onclick="location.href='./new'").button-base
+    img(src='./images/add-icon.svg')
+    span New Message

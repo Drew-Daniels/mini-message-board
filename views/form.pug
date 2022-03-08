@@ -1,0 +1,9 @@
+extends layout 
+block content 
+    form(method="POST" action="/new")
+        h1 New Message 
+        input(name="authorName" placeholder="Author Name")
+        input(name="message" placeholder="Message")
+        button(type="submit")
+            img()
+            span New Message 

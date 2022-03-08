@@ -3,3 +3,9 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  - function move() {window.location.href='/new'}
+  each msg in messages 
+    h2.msg-user #{msg.user} 
+    p.msg-text #{msg.text}
+    p.msg-added #{msg.added}
+  button(onclick="location.href='./new'").msg-button New Message
